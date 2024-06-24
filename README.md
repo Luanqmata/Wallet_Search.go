@@ -1,4 +1,4 @@
 # WALLET SEARCH BTC With .GO
 ##Programa que usa o maximo da sua CPU todos os processamentos , garantido assim maior eficiencia.
 
-![Animation](https://stories.cnnbrasil.com.br/wp-content/uploads/sites/9/2021/08/giphy-15-5.gif)
+![Animation](https://i.gifer.com/origin/81/81eb06410af54b829a93e1fd26831fc1_w200.gif)
