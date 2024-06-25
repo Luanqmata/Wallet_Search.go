@@ -14,14 +14,15 @@ import (
 )
 
 const (
-	prefix            = "00000000000000000000000000000000000000000000000" //mudar de acordo com a carteira
-	maximoCombinacoes = 10000000                                          //"Duzentos e noventa e cinco quatrilhões, cento e quarenta e sete trilhões, novecentos e cinco bilhões, cento e setenta e nove milhões, trezentos e cinquenta e dois milhões, oitocentos e vinte e cinco mil e oitocentos e cinquenta e seis."
+	prefix            = "000000000000000000000000000000000000000000000000000000000000" //mudar de acordo com a carteira
+	maximoCombinacoes = 65536                                          //"Duzentos e noventa e cinco quatrilhões, cento e quarenta e sete trilhões, novecentos e cinco bilhões, cento e setenta e nove milhões, trezentos e cinquenta e dois milhões, oitocentos e vinte e cinco mil e oitocentos e cinquenta e seis."
 )
 
 var chaves_desejadas = map[string]bool{
-	"13zb1hQbWVsc2S7ZTZnP2G4undNNpdh5so": true, //mudar todas as carteiras conforme o que procura
-	"1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9": true, // CARTEIRAS DE 68 BITS
-	"1MVDYgVaSN6iKKEsbzRUAYFrYJadLYZvvZ": true,
+	"1BDyrQ6WoF8VN3g9SAS1iKZcPzFfnDVieY": true, //mudar todas as carteiras conforme o que procura
+	"1QCbW9HWnwQWiQqVo5exhAnmfqKRrCRsvW": true,
+	"1ErZWg5cFCe4Vw5BzgfzB74VNLaXEiEkhk": true,
+	"1Pie8JkxBT6MGPz9Nvi3fsPkr2D8q3GBc1": true,
 }
 
 var contador = 0
@@ -31,13 +32,13 @@ func geradorChaves() []string {
 	chaves := make([]string, 0, maximoCombinacoes)
 
 	for contador < maximoCombinacoes {
-		suffix := make([]byte, 9) //mudar de acordo com a quantidade de bits
+		suffix := make([]byte, 2) //mudar de acordo com a quantidade de bits
 		_, err := rand.Read(suffix)
 		if err != nil {
 			log.Fatalf("Falha ao gerar chave: %v", err)
 		}
 
-		chaveGerada := prefix + hex.EncodeToString(suffix)[:17] // apagar o [:17] se for impar
+		chaveGerada := prefix + hex.EncodeToString(suffix) // apagar o [:17] se for impar (codigo 64 bits)
 
 		if _, ok := chavesGeradas[chaveGerada]; !ok {
 			chavesGeradas[chaveGerada] = struct{}{}
