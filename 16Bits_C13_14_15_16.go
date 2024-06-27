@@ -15,7 +15,7 @@ import (
 
 const (
 	prefix            = "000000000000000000000000000000000000000000000000000000000000" //mudar de acordo com a carteira
-	maximoCombinacoes = 65536                                          //"Duzentos e noventa e cinco quatrilhões, cento e quarenta e sete trilhões, novecentos e cinco bilhões, cento e setenta e nove milhões, trezentos e cinquenta e dois milhões, oitocentos e vinte e cinco mil e oitocentos e cinquenta e seis."
+	maximoCombinacoes = 65536                                         
 )
 
 var chaves_desejadas = map[string]bool{
